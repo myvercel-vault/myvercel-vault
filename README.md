@@ -1,4 +1,6 @@
 # MyVercel Vault — Polyglot Project
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8579aa9a-ded1-4f70-85ca-9e0d51a21d47/deploy-status)](https://app.netlify.com/projects/myvercel-vault/deploys)
 Vue + TypeScript + Ruby + Python + WebAssembly
 
 Frontend: Vue 3 + TS + Vite (no full HTML page, only SFC)
