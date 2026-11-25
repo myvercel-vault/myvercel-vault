@@ -1,0 +1,5 @@
+-- see frontend README: same schema as Neon file in previous step
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+CREATE TABLE IF NOT EXISTS users(id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name TEXT NOT NULL, username TEXT UNIQUE NOT NULL, email TEXT UNIQUE NOT NULL, password_hash TEXT NOT NULL, vault_pin_hash TEXT NOT NULL, created_at TIMESTAMPTZ DEFAULT now());
+CREATE TABLE IF NOT EXISTS vault_items(id UUID PRIMARY KEY DEFAULT gen_random_uuid(), user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE, type TEXT NOT NULL, title TEXT NOT NULL, encrypted_data TEXT NOT NULL, iv TEXT NOT NULL, is_favorite BOOLEAN DEFAULT false, created_at TIMESTAMPTZ DEFAULT now(), updated_at TIMESTAMPTZ DEFAULT now());
+CREATE TABLE IF NOT EXISTS attachments(id UUID PRIMARY KEY DEFAULT gen_random_uuid(), item_id UUID NOT NULL REFERENCES vault_items(id) ON DELETE CASCADE, file_name TEXT NOT NULL, file_size BIGINT NOT NULL, mime_type TEXT NOT NULL, r2_key TEXT NOT NULL, created_at TIMESTAMPTZ DEFAULT now());

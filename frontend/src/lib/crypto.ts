@@ -1,0 +1,5 @@
+import { loadWasm } from './wasm-loader'
+// AES-GCM via WebCrypto + strength via WASM (Rust). Secrets never logged.
+export async function deriveKey(password:string, salt:Uint8Array){ const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']); return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:210000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt']) }
+export async function encryptVault(password:string, plain:string){ const salt=crypto.getRandomValues(new Uint8Array(16)); const iv=crypto.getRandomValues(new Uint8Array(12)); const key=await deriveKey(password,salt); const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(plain)); return {encrypted_data:btoa(String.fromCharCode(...new Uint8Array(ct))), iv:btoa(String.fromCharCode(...iv))} }
+export async function passwordStrength(pw:string): Promise<'Bad'|'Medium'|'Strong'>{ try{ const w=await loadWasm(); return w.strength(pw) }catch{ return pw.length<8?'Bad':pw.length<12?'Medium':'Strong' } }
