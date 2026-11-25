@@ -9,6 +9,11 @@
   <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f40b.svg" width="40" alt="Whale" />
 </p>
 
+| Vue | Linux | Netlify |
+| :---: | :---: | :---: |
+| <img src="https://cdn.simpleicons.org/vuedotjs" width="40" /> | <img src="https://cdn.simpleicons.org/linux" width="40" /> | <img src="https://cdn.simpleicons.org/netlify" width="40" /> |
+| Vercel | GitHub | Whale |
+| <img src="https://cdn.simpleicons.org/vercel" width="40" /> | <img src="https://cdn.simpleicons.org/github" width="40" /> | <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f40b.svg" width="40" /> |
 Vue + TypeScript + Ruby + Python + WebAssembly
 
 Frontend: Vue 3 + TS + Vite (no full HTML page, only SFC)
