@@ -1,6 +1,11 @@
 # MyVercel Vault — Polyglot Project
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8579aa9a-ded1-4f70-85ca-9e0d51a21d47/deploy-status)](https://app.netlify.com/projects/myvercel-vault/deploys)
+<img src="https://cdn.simpleicons.org/vuedotjs" width="24" alt="Vue" />
+<img src="https://cdn.simpleicons.org/docker" width="24" alt="Docker" />
+<img src="https://cdn.simpleicons.org/linux" width="24" alt="Linux" />
+<img src="https://cdn.simpleicons.org/netlify" width="24" alt="Netlify" />
+<img src="https://cdn.simpleicons.org/vercel" width="24" alt="Vercel" />
+<img src="https://cdn.simpleicons.org/github" width="24" alt="GitHub" />
+<img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f40b.svg" width="24" alt="Whale" />
 Vue + TypeScript + Ruby + Python + WebAssembly
 
 Frontend: Vue 3 + TS + Vite (no full HTML page, only SFC)
